@@ -214,33 +214,76 @@ to{transform:translateY(110vh) rotate(720deg);}
 @media(max-width:768px){
 
 .corner-img{
-    position:relative;
-    width:70px;
-    height:70px;
-    margin:5px;
-    border-radius:12px;
+    width:65px;
+    height:65px;
+    border-width:2px;
 }
 
-/* convert photos into top row */
-#photos{
-    position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:8px;
+/* KEEP CORNERS BUT PUSH AWAY FROM TEXT AREA */
+.top-left{
+    top:10px;
+    left:10px;
+}
+
+.top-right{
+    top:10px;
+    right:10px;
+}
+
+.bottom-left{
+    bottom:10px;
+    left:10px;
+}
+
+.bottom-right{
+    bottom:10px;
+    right:10px;
+}
+
+/* MAKE CENTER CONTENT SAFE ZONE */
+.container{
+    padding-top:120px;
+    padding-bottom:120px;
+}
+
+/* SCALE DOWN CONTENT SO IT DOESN'T TOUCH PHOTOS */
+.cake{
+    transform:scale(0.7);
     margin-top:10px;
 }
 
-/* remove corner positioning on mobile */
-.top-left,
-.top-right,
-.bottom-left,
-.bottom-right{
-    top:auto;
-    left:auto;
-    right:auto;
-    bottom:auto;
+.typing{
+    font-size:0.95rem;
+    width:95%;
+}
+
+.birthday-text{
+    font-size:2rem;
+}
+
+h1{
+    font-size:1.4rem;
+}
+}
+
+@media(max-width:480px){
+
+.corner-img{
+    width:50px;
+    height:50px;
+}
+
+.container{
+    padding-top:140px;
+    padding-bottom:140px;
+}
+
+.birthday-text{
+    font-size:1.6rem;
+}
+
+.typing{
+    font-size:0.9rem;
 }
 }
 
