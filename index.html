@@ -190,7 +190,14 @@ animation:floatHeart linear infinite;
 from{transform:translateY(100vh);}
 to{transform:translateY(-120px);}
 }
-
+#photos{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+}
 .confetti{
 position:absolute;
 width:10px;height:10px;
@@ -203,19 +210,40 @@ to{transform:translateY(110vh) rotate(720deg);}
 }
 
 /* MOBILE */
+
 @media(max-width:768px){
-h1{font-size:1.5rem;}
-button{font-size:1rem;padding:12px 25px;}
-.birthday-text{font-size:2.2rem;}
-.corner-img{width:70px;height:70px;}
-.cake{transform:scale(0.75);}
+
+.corner-img{
+    position:relative;
+    width:70px;
+    height:70px;
+    margin:5px;
+    border-radius:12px;
 }
 
-@media(max-width:480px){
-.corner-img{width:55px;height:55px;}
-.birthday-text{font-size:1.8rem;}
-h1{font-size:1.3rem;}
+/* convert photos into top row */
+#photos{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:10px;
 }
+
+/* remove corner positioning on mobile */
+.top-left,
+.top-right,
+.bottom-left,
+.bottom-right{
+    top:auto;
+    left:auto;
+    right:auto;
+    bottom:auto;
+}
+}
+
 </style>
 </head>
 
