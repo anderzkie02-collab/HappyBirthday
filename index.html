@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Birthday Alianna 💙</title>
@@ -16,7 +16,7 @@ font-family:'Segoe UI',sans-serif;
 
 body{
 min-height:100vh;
-overflow:hidden;
+overflow-x:hidden;
 overflow-y:auto;
 display:flex;
 justify-content:center;
@@ -26,6 +26,7 @@ background:linear-gradient(to bottom,#4FACFE,#00C6FF,#87CEEB);
 position:relative;
 }
 
+/* CLOUDS */
 .cloud{
 position:absolute;
 background:white;
@@ -49,20 +50,6 @@ left:-200px;
 animation:moveCloud 25s linear infinite;
 }
 
-.cloud1::before{
-width:60px;
-height:60px;
-top:-25px;
-left:15px;
-}
-
-.cloud1::after{
-width:70px;
-height:70px;
-top:-30px;
-right:15px;
-}
-
 .cloud2{
 width:180px;
 height:60px;
@@ -71,40 +58,12 @@ left:-250px;
 animation:moveCloud 35s linear infinite;
 }
 
-.cloud2::before{
-width:70px;
-height:70px;
-top:-30px;
-left:20px;
-}
-
-.cloud2::after{
-width:80px;
-height:80px;
-top:-35px;
-right:20px;
-}
-
 .cloud3{
 width:160px;
 height:55px;
 top:65%;
 left:-220px;
 animation:moveCloud 30s linear infinite;
-}
-
-.cloud3::before{
-width:60px;
-height:60px;
-top:-25px;
-left:20px;
-}
-
-.cloud3::after{
-width:70px;
-height:70px;
-top:-30px;
-right:20px;
 }
 
 @keyframes moveCloud{
@@ -139,14 +98,12 @@ button:hover{
 transform:scale(1.05);
 }
 
+/* HIDDEN SYSTEM */
 .hidden{
-display:none;
+display:none !important;
 }
 
-#photos{
-display:none;
-}
-
+/* PHOTOS */
 .corner-img{
 position:absolute;
 width:130px;
@@ -157,109 +114,42 @@ border:4px solid white;
 box-shadow:0 0 15px rgba(0,0,0,.3);
 }
 
-.top-left{
-top:20px;
-left:20px;
-}
+.top-left{top:20px;left:20px;}
+.top-right{top:20px;right:20px;}
+.bottom-left{bottom:20px;left:20px;}
+.bottom-right{bottom:20px;right:20px;}
 
-.top-right{
-top:20px;
-right:20px;
-}
+.photo-show .top-left{animation:slideTL 1.5s forwards;}
+.photo-show .top-right{animation:slideTR 1.5s forwards;}
+.photo-show .bottom-left{animation:slideBL 1.5s forwards;}
+.photo-show .bottom-right{animation:slideBR 1.5s forwards;}
 
-.bottom-left{
-bottom:20px;
-left:20px;
-}
+@keyframes slideTL{from{transform:translate(-300px,-300px);}to{transform:translate(0,0);}}
+@keyframes slideTR{from{transform:translate(300px,-300px);}to{transform:translate(0,0);}}
+@keyframes slideBL{from{transform:translate(-300px,300px);}to{transform:translate(0,0);}}
+@keyframes slideBR{from{transform:translate(300px,300px);}to{transform:translate(0,0);}}
 
-.bottom-right{
-bottom:20px;
-right:20px;
-}
-
-.photo-show .top-left{
-animation:slideTL 1.5s forwards;
-}
-
-.photo-show .top-right{
-animation:slideTR 1.5s forwards;
-}
-
-.photo-show .bottom-left{
-animation:slideBL 1.5s forwards;
-}
-
-.photo-show .bottom-right{
-animation:slideBR 1.5s forwards;
-}
-
-@keyframes slideTL{
-from{transform:translate(-300px,-300px);}
-to{transform:translate(0,0);}
-}
-
-@keyframes slideTR{
-from{transform:translate(300px,-300px);}
-to{transform:translate(0,0);}
-}
-
-@keyframes slideBL{
-from{transform:translate(-300px,300px);}
-to{transform:translate(0,0);}
-}
-
-@keyframes slideBR{
-from{transform:translate(300px,300px);}
-to{transform:translate(0,0);}
-}
-
-.cake{
-margin-top:20px;
-}
-
+/* CAKE */
+.cake{margin-top:20px;}
 .candle{
-width:12px;
-height:55px;
-background:white;
-margin:auto;
-position:relative;
+width:12px;height:55px;background:white;margin:auto;position:relative;
 }
-
 .flame{
-width:22px;
-height:35px;
-background:gold;
-border-radius:50%;
-position:absolute;
-top:-30px;
-left:-5px;
+width:22px;height:35px;background:gold;border-radius:50%;
+position:absolute;top:-30px;left:-5px;
 animation:flicker .2s infinite alternate;
 box-shadow:0 0 25px orange;
 }
-
-@keyframes flicker{
-from{transform:scale(1);}
-to{transform:scale(1.15);}
-}
+@keyframes flicker{from{transform:scale(1);}to{transform:scale(1.15);}}
 
 .layer2{
-width:170px;
-height:55px;
-background:#90CAF9;
-border-radius:15px;
-margin:auto;
-margin-bottom:-10px;
+width:170px;height:55px;background:#90CAF9;border-radius:15px;margin:auto;margin-bottom:-10px;
 }
-
 .layer1{
-width:220px;
-height:70px;
-background:#42A5F5;
-border-radius:15px;
-margin:auto;
+width:220px;height:70px;background:#42A5F5;border-radius:15px;margin:auto;
 }
 
-
+/* MESSAGE */
 .typing{
 max-width:600px;
 width:90%;
@@ -272,20 +162,15 @@ text-align:center;
 background:rgba(255,255,255,0.18);
 border-radius:20px;
 backdrop-filter:blur(10px);
-box-shadow:0 4px 15px rgba(0,0,0,.15);
-word-wrap:break-word;
 }
 
+/* TEXT */
 .birthday-text{
 font-family:'Dancing Script',cursive;
 font-size:4rem;
-font-weight:bold;
 color:white;
 margin-top:20px;
-text-shadow:
-0 0 10px white,
-0 0 20px #87CEEB,
-0 0 40px #00BFFF;
+text-shadow:0 0 10px white,0 0 20px #87CEEB,0 0 40px #00BFFF;
 }
 
 .subtitle{
@@ -294,6 +179,7 @@ color:white;
 font-size:1.1rem;
 }
 
+/* EFFECTS */
 .heart{
 position:absolute;
 font-size:25px;
@@ -307,249 +193,145 @@ to{transform:translateY(-120px);}
 
 .confetti{
 position:absolute;
-width:10px;
-height:10px;
+width:10px;height:10px;
 top:-10px;
 animation:fall linear infinite;
 }
 
 @keyframes fall{
-to{
-transform:translateY(110vh) rotate(720deg);
-}
+to{transform:translateY(110vh) rotate(720deg);}
 }
 
+/* MOBILE */
 @media(max-width:768px){
-
-body{
-    overflow-y:auto;
-    padding:20px 0;
+h1{font-size:1.5rem;}
+button{font-size:1rem;padding:12px 25px;}
+.birthday-text{font-size:2.2rem;}
+.corner-img{width:70px;height:70px;}
+.cake{transform:scale(0.75);}
 }
 
-.container{
-    width:95%;
-    padding:10px;
-}
-
-h1{
-    font-size:1.5rem;
-    margin-bottom:15px;
-}
-
-button{
-    font-size:1rem;
-    padding:12px 25px;
-}
-
-.birthday-text{
-    font-size:2.2rem;
-}
-
-.subtitle{
-    font-size:0.9rem;
-    padding:0 15px;
-}
-
-.typing{
-    width:95%;
-    font-size:0.95rem;
-    line-height:1.6;
-    padding:15px;
-}
-
-.corner-img{
-    width:70px;
-    height:70px;
-    border-width:3px;
-}
-
-.cake{
-    transform:scale(0.75);
-}
-
-.top-left{
-    top:10px;
-    left:10px;
-}
-
-.top-right{
-    top:10px;
-    right:10px;
-}
-
-.bottom-left{
-    bottom:10px;
-    left:10px;
-}
-
-.bottom-right{
-    bottom:10px;
-    right:10px;
-}
-#birthdaySection{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-}
 @media(max-width:480px){
-
-.corner-img{
-    width:55px;
-    height:55px;
-}
-
-.birthday-text{
-    font-size:1.8rem;
-}
-
-h1{
-    font-size:1.3rem;
-}
-
-.typing{
-    font-size:0.9rem;
-}
-
-}
+.corner-img{width:55px;height:55px;}
+.birthday-text{font-size:1.8rem;}
+h1{font-size:1.3rem;}
 }
 </style>
 </head>
 
 <body>
+
 <audio id="birthdayMusic" loop>
-    <source src="birthday.mp3" type="audio/mpeg">
+<source src="birthday.mp3" type="audio/mpeg">
 </audio>
+
 <div class="cloud cloud1"></div>
 <div class="cloud cloud2"></div>
 <div class="cloud cloud3"></div>
 
-<div id="photos">
-<img src="photo1.jpg" class="corner-img top-left">
-<img src="photo2.jpg" class="corner-img top-right">
-<img src="photo3.jpg" class="corner-img bottom-left">
-<img src="photo4.jpg" class="corner-img bottom-right">
-</div>
-
 <div class="container">
-
 <h1>💙 A Special Surprise For Alianna 💙</h1>
 <button id="surpriseBtn" onclick="showBirthday()">Click Here</button>
 
 <div id="birthdaySection" class="hidden">
 
-<div class="cake">
-<div class="candle">
-<div class="flame"></div>
-</div>
-<div class="layer2"></div>
-<div class="layer1"></div>
-</div>
+    <div id="photos">
+        <img src="photo1.jpg" class="corner-img top-left">
+        <img src="photo2.jpg" class="corner-img top-right">
+        <img src="photo3.jpg" class="corner-img bottom-left">
+        <img src="photo4.jpg" class="corner-img bottom-right">
+    </div>
 
-<div id="message" class="typing"></div>
+    <div class="cake">
+        <div class="candle">
+            <div class="flame"></div>
+        </div>
+        <div class="layer2"></div>
+        <div class="layer1"></div>
+    </div>
 
-<div class="birthday-text">
-🎉 Happy Birthday Alianna! 🎉
+    <div id="message" class="typing"></div>
+
+    <div class="birthday-text">
+        🎉 Happy Birthday Alianna! 🎉
+    </div>
+
+    <div class="subtitle">
+        Wishing you a day as beautiful as your smile, filled with happiness, love, laughter and unforgettable memories. 💙✨
+    </div>
+
 </div>
-
-<div class="subtitle">
-Wishing you a day as beautiful as your smile, filled with happiness, love, laughter and unforgettable memories. 💙✨
-</div>
-
-</div>
-
 </div>
 
 <script>
-    let heartsStarted = false;
+let heartsStarted = false;
+
 function showBirthday(){
     const music = document.getElementById("birthdayMusic");
+    music.volume = 0.5;
+    music.play().catch(()=>{});
 
-music.volume = 0.5; // 50% volume
+    document.getElementById("surpriseBtn").style.display = "none";
 
-music.play().catch(error => {
-    console.log("Audio playback blocked:", error);
-});
-document.getElementById("surpriseBtn").style.display = "none";
-document.getElementById("birthdaySection").classList.remove("hidden");
+    const section = document.getElementById("birthdaySection");
+    section.classList.remove("hidden");
 
-const photos=document.getElementById("photos");
-photos.style.display="block";
-photos.classList.add("photo-show");
+    setTimeout(() => {
+        document.getElementById("photos").classList.add("photo-show");
+    }, 50);
 
-typeMessage();
-createConfetti();
-if(!heartsStarted){
-    heartsStarted = true;
-    createHearts();
+    typeMessage();
+    createConfetti();
+
+    if(!heartsStarted){
+        heartsStarted = true;
+        createHearts();
+    }
 }
-}
+
+/* TYPE MESSAGE */
 function typeMessage(){
-
     const messageBox = document.getElementById("message");
 
     const text =
     "To the most beautiful girl, Alianna. Thank you for bringing happiness and smiles wherever you go. May all your dreams come true and may your special day be filled with love, joy and endless blessings. 💙";
 
     let i = 0;
-
     messageBox.innerHTML = "";
 
     function typing(){
-
         if(i < text.length){
-
             messageBox.innerHTML += text.charAt(i);
-
             i++;
-
             setTimeout(typing, 40);
-
         }
-
     }
-
     typing();
-
 }
 
-function typing(){
-if(i<text.length){
-const messageBox = document.getElementById("message");
-
-if(messageBox.innerHTML === ""){
-    messageBox.innerHTML = "";
-}
-i++;
-setTimeout(typing,50);
-}
-}
-typing();
-
-
+/* CONFETTI */
 function createConfetti(){
 for(let i=0;i<200;i++){
-let confetti=document.createElement("div");
-confetti.classList.add("confetti");
-confetti.style.left=Math.random()*100+"vw";
-confetti.style.background=`hsl(${Math.random()*360},100%,50%)`;
-confetti.style.animationDuration=(Math.random()*3+2)+"s";
-document.body.appendChild(confetti);
+let c=document.createElement("div");
+c.classList.add("confetti");
+c.style.left=Math.random()*100+"vw";
+c.style.background=`hsl(${Math.random()*360},100%,50%)`;
+c.style.animationDuration=(Math.random()*3+2)+"s";
+document.body.appendChild(c);
 }
 }
 
+/* HEARTS */
 function createHearts(){
 setInterval(()=>{
-let heart=document.createElement("div");
-heart.classList.add("heart");
-heart.innerHTML="💙";
-heart.style.left=Math.random()*100+"vw";
-heart.style.animationDuration=(Math.random()*4+4)+"s";
-document.body.appendChild(heart);
+let h=document.createElement("div");
+h.classList.add("heart");
+h.innerHTML="💙";
+h.style.left=Math.random()*100+"vw";
+h.style.animationDuration=(Math.random()*4+4)+"s";
+document.body.appendChild(h);
 
-setTimeout(()=>{
-heart.remove();
-},8000);
+setTimeout(()=>h.remove(),8000);
 
 },500);
 }
